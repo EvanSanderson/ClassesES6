@@ -106,11 +106,13 @@ class Sword extends Knight {
       this.length = "5 feet";
   }
 }
-var jon = new Knight("sword", "England", "England");
-jon.fight();
-var excalibur = new Sword("sword");
+var england = new Kingdom("England", "The Realm");
+var jon = new Knight("sword", england.name, england.area);
+england.knight = jon;
+england.knight.fight(); // I belong to England, I wield a sword
+var excalibur = new Sword(jon.weapon);
 jon.sword = excalibur;
-console.log(jon.sword); // What do you think this logs?
+console.log(jon.sword) // weapon: sword, length: 5 feet
 
 ```
 
