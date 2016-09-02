@@ -113,3 +113,68 @@ jon.sword = excalibur;
 console.log(jon.sword); // What do you think this logs?
 
 ```
+
+
+
+#Spread
+<p align="center">
+    <img src="http://media1.giphy.com/media/Jfu3UlHpJK1Hi/giphy.gif">
+</p>
+
+###Syntax
+For function calls:
+```javascript
+myFunction(...iterableObj);
+```
+
+For arrays:
+```javascript
+[4, 3, ...iterableObj, 6]
+```
+
+###What does it do?
+[From MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_operator):
+
+
+>In ES6, spread syntax allows an expression to be expanded in places where multiple arguments (for function calls) or multiple elements (for array literals).
+
+Simply put, the spread syntax can be used to access all of the elements of an iterable data structure.
+
+```javascript
+var foo = [4, 6];
+
+var bar = [1, ...foo, 2, 5];     // [1, 4, 6, 2, 5]
+```
+or
+```javascript
+function myFunction(a, b, c) {
+  return a + b + c;
+}
+
+var foo = [1, 2, 4];
+
+myFunction(...foo)   // 6
+```
+
+### Why use it?
+List concatenation is now simple and inuitive:
+```javascript
+var jamesList = ['james', 'jim', 'jimbo', 'jimothy'];
+var andyList = ['andy', 'andrew', 'drew', 'a-dog'];
+var nayanaList = ['nayana'];
+
+var instructors = [...jamesList, ...andyList, ...nayanaList]
+```
+
+A good use case is a function that can take any number of arguments, e.g., `Math.max()`
+
+```javascript
+var arr = [1, 3, 15, 8, 9, 6];
+
+Math.max(1, 3, 15, 8, 9, 6);    // 15
+
+Math.max(arr);                  // NaN
+
+Math.max(...arr);               // 15
+
+```
