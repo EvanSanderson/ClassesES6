@@ -72,3 +72,44 @@ jon.fight();
    - super allows us to access properties in the parent object!
  
 One slight catch - make sure to declare super before you refer to "this" in your child object - otherwise you will get a reference error!
+
+# A Final Cool Thing
+
+```
+class Kingdom {
+  constructor(name, area) {
+  	this.name = name;
+  	this.area = area;
+}
+
+	declare() {
+      console.log("I belong to the Kingdom of ", this.name + '.');
+ 
+    }
+}
+
+class Knight extends Kingdom{
+  constructor(weapon, name, area){
+    super(name, area);
+    this.weapon = weapon;
+  }
+  fight() {
+    super.declare()
+    console.log("I wield a " + this.weapon);
+    
+  }
+}
+
+class Sword extends Knight {
+  constructor(name){
+    super(name);
+      this.length = "5 feet";
+  }
+}
+var jon = new Knight("sword", "England", "England");
+jon.fight();
+var excalibur = new Sword("sword");
+jon.sword = excalibur;
+console.log(jon.sword); // What do you think this logs?
+
+```
