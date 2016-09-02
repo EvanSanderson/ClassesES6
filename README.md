@@ -188,7 +188,8 @@ function _classCallCheck(instance, Constructor)
 Now that we have defined the relationships between sub and super classes, we can instantiate classes that relate to the parent class definition by calling these methods... it should look something like this. 
 
 ```
-var Polygon = function () { //define a class
+var Polygon = function () 
+{ //define a class
   function Polygon(height, width) //class constructor
   {
     _classCallCheck(this, Polygon);
@@ -198,7 +199,8 @@ var Polygon = function () { //define a class
     this.width  = width;
   }
 
-  _createClass(Polygon, [{
+  _createClass(Polygon, 
+  [{
     key: "sayname",
     value: function sayname() //define main constructor function
     {
@@ -211,10 +213,12 @@ var Polygon = function () { //define a class
   return Polygon;
 }();
 
-var Rectangle = function (_Polygon) {
+var Rectangle = function (_Polygon) 
+{
   _inherits(Rectangle, _Polygon);
 
-  function Rectangle(height, width) {
+  function Rectangle(height, width) 
+  {
     _classCallCheck(this, Rectangle);
 
     //calls parent constructor
@@ -224,9 +228,11 @@ var Rectangle = function (_Polygon) {
     return _this;
   }
 
-  _createClass(Rectangle, [{
+  _createClass(Rectangle, 
+  [{
     key: "area",
-    get: function get() {
+    get: function get() 
+    {
       return this.height * this.width;
     }
   }]);
